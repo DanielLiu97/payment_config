@@ -1,0 +1,39 @@
+# ===== 脱敏：排除敏感 / 业务数据与运行缓存 =====
+
+# 运行任务产物（含日志、结果、临时文件，含内部业务数据）
+web_data/
+
+# 运行日志
+logs/
+
+# 抓取的生产支付页静态资源（含第三方 minified 代码与内部资源）
+支付页请求链路/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 真实环境脚本（含敏感值，已用 .example 模板替代）
+scripts/windows/web_service.env.ps1
+
+# 业务 / 运营数据快照
+shop_info.json
+shop_window.json
+
+# 本地环境变量（真实值，禁止提交）
+.env
+
+# Excel 模板（含实际配置数据，使用 generate_excel_template.py 重新生成空模板）
+*.xlsx
+
+# 本地脱敏过程文档（含已替换的明文密钥记录，仅本地留存，勿入库）
+脱敏扫描报告.md
+脱敏处理记录.md
+
+# 本地记忆 / macOS 元数据
+.workbuddy/
+.DS_Store
+
+# 第三方嵌套仓库（作为子模块引用会导致内容为空）
+design_refs/awesome-design-md/

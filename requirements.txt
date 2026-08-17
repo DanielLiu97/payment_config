@@ -1,0 +1,8 @@
+pandas
+requests
+openpyxl
+fastapi
+uvicorn
+python-multipart
+colorlog
+
